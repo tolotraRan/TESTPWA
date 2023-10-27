@@ -1,0 +1,86 @@
+/* netflix-style.css */
+.container {
+  background: #111;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background: #333;
+  color: #fff;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: #e50914;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+button:disabled {
+  background: #888;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #e50914;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.movies-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.movie-card {
+  margin: 10px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: #222;
+  color: #fff;
+  width: 300px;
+}
+
+img {
+  max-width: 100%;
+}
+
+.movie-details {
+  padding: 10px;
+}
+
+.movie-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.movie-overview {
+  margin-top: 10px;
+}
