@@ -1,86 +1,108 @@
-/* netflix-style.css */
-.container {
-  background: #111;
+/* Réinitialisation CSS pour supprimer les marges par défaut et le remplissage */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Style de fond du corps */
+body {
+  background-color: #141414;
   color: #fff;
   font-family: Arial, sans-serif;
-  padding: 20px;
+}
+
+/* Style de l'en-tête */
+header {
+  background-color: #111;
+  text-align: center;
+  padding: 20px 0;
 }
 
 h1 {
   font-size: 36px;
-  font-weight: bold;
-  margin-bottom: 20px;
 }
 
-.search-bar {
-  margin-bottom: 20px;
-}
-
-form {
-  display: flex;
+#searchBar {
+  margin-top: 20px;
 }
 
 input[type="text"] {
-  flex: 1;
   padding: 10px;
-  font-size: 16px;
   border: none;
   border-radius: 5px;
-  background: #333;
-  color: #fff;
+  width: 60%; /* Ajustez la largeur selon vos besoins */
 }
 
-button {
+button#searchButton {
+  background-color: #e50914;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
   padding: 10px 20px;
-  font-size: 16px;
-  background: #e50914;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
   cursor: pointer;
-  margin-left: 10px;
 }
 
-button:disabled {
-  background: #888;
-  cursor: not-allowed;
-}
-
-.error-message {
-  color: #e50914;
-  font-weight: bold;
-  margin-top: 10px;
-}
-
-.movies-container {
+/* Style de la zone de contenu principal */
+main {
+  padding: 20px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around; /* Ajustez la justification selon vos besoins */
 }
 
-.movie-card {
-  margin: 10px;
-  border: 1px solid #333;
-  border-radius: 5px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  background: #222;
-  color: #fff;
-  width: 300px;
-}
-
-img {
-  max-width: 100%;
-}
-
-.movie-details {
+/* Style des films (blocs) */
+.movie {
+  background-color: #111;
+  border-radius: 10px;
   padding: 10px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin: 10px; /* Marge entre les éléments */
 }
 
-.movie-title {
-  font-size: 18px;
-  font-weight: bold;
+.movie img {
+  max-width: 100%;
+  border-radius: 5px;
 }
 
-.movie-overview {
-  margin-top: 10px;
+/* Style du pied de page (si nécessaire) */
+footer {
+  background-color: #111;
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Style du lien du service Worker (si nécessaire) */
+a.service-worker-link {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Appliquer un style aux liens (les changer au besoin) */
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Rendre le site responsive pour les écrans plus petits */
+@media screen and (max-width: 768px) {
+  input[type="text"] {
+      width: 100%;
+  }
+  main {
+      flex-direction: column;
+      align-items: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  .movie {
+      width: 100%; /* Pour afficher un élément par ligne sur des écrans plus petits */
+      margin: 10px 0; /* Ajustez les marges selon vos besoins */
+  }
 }

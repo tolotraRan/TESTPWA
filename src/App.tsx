@@ -45,8 +45,8 @@ const App: React.FC = () => {
     <div className="container">
       {apiKey ? ( 
         <div>
-          <h1>Looking for a movie?</h1>
-          <div className="search-bar">
+          <h1>Chercher des films</h1>
+          <div id="searchBar">
             <form onSubmit={handleSearch}>
               <input
                 type="text"
@@ -55,31 +55,35 @@ const App: React.FC = () => {
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
               {isLoading ? (
-                <button disabled>Searching...</button>
+                <button id="searchButton" disabled>Searching...</button>
               ) : (
-                <button type="submit">Search</button>
+                <button id="searchButton" type="submit">Search</button>
               )}
             </form>
           </div>
   
           {error && <div className="error-message">{error}</div>}
   
-          <div className="movies-container">
+          <div>
             {movies?.map((movie: any, index: number) => {
               return (
-                <div key={index} className="movie-card">
-                  <img
-                    src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                    alt={movie.title}
-                  />
-                  <div className="movie-details">
-                    <div className="movie-title">
-                      {movie.title} (Original title: {movie.original_title})
+                <div key={index} id="movies">
+                  <div key={index} className="movies">
+                    <img
+                      src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                      alt={movie.title}
+                    />
+                    <div >
+                    <div >
+                      <div className="movie-title">
+                        {movie.title} (Titre : {movie.original_title})
+                      </div>
+                      <div className="movie-overview">
+                        <b>Synopsis: </b> {truncateOverview(movie.overview, 10)}
+                      </div>
+                      </div>
                     </div>
-                    <div className="movie-overview">
-                      <b>Overview: </b> {truncateOverview(movie.overview, 10)}
                     </div>
-                  </div>
                 </div>
               );
             })}
